@@ -2,17 +2,18 @@ package com.asksira.bsimagepicker;
 
 import android.content.Context;
 import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * The RecyclerView's adapter of the selectable ivImage tiles.
@@ -245,7 +246,7 @@ public class ImageTileAdapter extends RecyclerView.Adapter<ImageTileAdapter.Base
             if (imageList == null) return;
             File imageFile = imageList.get(position - nonListItemCount);
             itemView.setTag(Uri.fromFile(imageFile));
-            Glide.with(itemView).load(imageFile).into(ivImage);
+            Picasso.get().load(imageFile).into(ivImage);
             darken.setVisibility(selectedFiles.contains(imageFile)? View.VISIBLE : View.INVISIBLE);
             ivTick.setVisibility(selectedFiles.contains(imageFile)? View.VISIBLE : View.INVISIBLE);
         }
