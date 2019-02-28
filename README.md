@@ -1,4 +1,4 @@
-# BSImagePicker
+# BSImagePicker (FORK)
 
 BS stands for [BottomSheet](https://developer.android.com/reference/android/support/design/widget/BottomSheetDialogFragment).
 
@@ -47,7 +47,7 @@ First make sure `jcenter()` is included as a repository in your **project**'s bu
 ```groovy
 allprojects {
     repositories {
-        jcenter()
+        			maven { url 'https://jitpack.io' }
     }
 }
 ```
@@ -55,11 +55,13 @@ allprojects {
 And then add the below to your app's build.gradle:  
 
 ```groovy
-    implementation 'com.asksira.android:bsimagepicker:1.1.0'
+    dependencies {
+	        implementation 'com.github.yesidlazaro:BSImagePicker:v1.1.0'
+	}
 ```
 
 You also need to make sure you have included `'com.android.support:support-v4:{supportLibraryVersion}` in your dependencies.
-
+### Its like th original but using picaaso as image loader. 
 ### Step 1: Create your own FileProvider
 
 Just follow the guide from [Official Android Document](https://developer.android.com/reference/android/support/v4/content/FileProvider#ProviderDefinition).
